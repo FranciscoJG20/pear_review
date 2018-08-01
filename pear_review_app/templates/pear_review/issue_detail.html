@@ -1,0 +1,18 @@
+{% extends 'pear_review/base.html' %} {% block content %}
+<h2> {{ issue.title }}
+    <a href="">(edit)</a>
+</h2>
+<h4> {{ issue.body }}</h4>
+
+{% endblock %} {% comment %}
+<img src="{{ issue.screenshot_url }}" alt="" class='issue-screenshot'> {% endblock %}
+<h3> Comments
+    <a href="">(+)</a>
+</h3>
+<ul>
+    {% for comment in issue.comments.all %}
+    <li>
+        <a href="">{{comment.author}}</a>
+    </li>
+    {% endfor %}
+</ul> {% endcomment %}
