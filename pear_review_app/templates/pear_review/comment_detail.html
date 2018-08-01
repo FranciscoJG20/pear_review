@@ -1,6 +1,7 @@
 {% extends 'pear_review/base.html' %} {% block content %}
 <h2> {{ comment.author }}
-    <a href="">(edit)</a>
+    <a href="{% url 'comment_edit' pk=comment.pk %}">(edit)</a>
+    <a href="{% url 'comment_delete' pk=comment.pk %}">(delete)</a>
 </h2>
 <h4> {{ comment.content }}</h4>
 {% endblock %}
