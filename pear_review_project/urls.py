@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import include
+
+# ^^^ I am adding an import - include 
+# so that I can include other url files in our main one. 
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+     path('', include('pear_review_app.urls')),
 ]
