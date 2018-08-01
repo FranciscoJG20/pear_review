@@ -1,6 +1,7 @@
 {% extends 'pear_review/base.html' %} {% block content %}
 <h2> {{ issue.title }}
-    <a href="">(edit)</a>
+    <a href="{% url 'issue_edit' pk=issue.pk %}">(edit)</a>
+    <a href="{% url 'issue_delete' pk=issue.pk %}">(delete)</a>
 </h2>
 <h4> {{ issue.body }}</h4>
 
