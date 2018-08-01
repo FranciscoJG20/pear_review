@@ -1,6 +1,14 @@
 from django.db import models
+from django.contrib.auth.models import User 
 
 # Create your models here.
+
+class Pear(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    bio = models.TextField(blank=True)
+    location = models.CharField(max_length=100, blank=True)
+    photo_url = models.TextField(blank=True)
+
 
 class Issue(models.Model):
     title = models.CharField(max_length=100 , blank=True)
