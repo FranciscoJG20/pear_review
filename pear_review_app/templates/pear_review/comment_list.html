@@ -1,6 +1,6 @@
 {% extends 'pear_review/base.html' %} {% block content %}
 <h2>Comments
-    <a href=''>(+)</a>
+    <a href="{% url 'comment_create' %}">(+)</a>
 </h2>
 <ul>
     {% for comment in comments %}
