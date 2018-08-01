@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<html>
+
+<head>
+    <title>Pear Review Code</title>
+    <link rel="stylesheet" href="{% static 'css/pear_review.css' %}">
+</head>
+
+<body>
+    <h1>Pear Review Code</h1>
+    <image src="" alt="" class="pr-lgo"></image>
+    <nav>
+        <a href="/">Issues</a>
+        <a href="/comments">Comments</a>
+    </nav>
+    {% block content %} {% endblock %}
+</body>
+
+</html>
