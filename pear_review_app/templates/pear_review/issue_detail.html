@@ -3,17 +3,14 @@
     <a href="{% url 'issue_edit' pk=issue.pk %}">(edit)</a>
     <a href="{% url 'issue_delete' pk=issue.pk %}">(delete)</a>
 </h2>
-<h4> {{ issue.body }}</h4>
-
-{% endblock %} {% comment %}
-<img src="{{ issue.screenshot_url }}" alt="" class='issue-screenshot'> {% endblock %}
-<h3> Comments
-    <a href="">(+)</a>
-</h3>
-<ul>
-    {% for comment in issue.comments.all %}
-    <li>
-        <a href="">{{comment.author}}</a>
-    </li>
-    {% endfor %}
-</ul> {% endcomment %}
+<h3> {{ issue.body }}</h4>
+    <h4> Comments
+        <a href="{% url 'comment_create' %}">(+)</a>
+    </h4>
+    <ul>
+        {% for comment in issue.comments.all %}
+        <li>
+            <a href="{% url 'comment_detail' pk=comment.pk %}">{{comment.content}}</a>
+        </li>
+        {% endfor %}
+    </ul> {% endblock %}
