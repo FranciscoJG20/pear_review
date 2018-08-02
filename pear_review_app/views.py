@@ -11,6 +11,10 @@ from django.contrib.auth.forms import UserCreationForm
 
 # Create your views here.
 
+@login_required
+def home(request):
+    return render(request, 'core/home.html')
+
 def sign_up(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)

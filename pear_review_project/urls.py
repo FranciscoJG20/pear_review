@@ -29,4 +29,13 @@ urlpatterns = [
     path('accounts/login/', auth_views.login, name='login'),
     path('accounts/logout/', auth_views.logout, name='logout'),
     path('accounts/signup/', pear_views.sign_up, name='signup'),
+    url(r'^oauth/', include('social_django.urls', namespace='social')), 
 ]
+
+LOGIN_URL = 'login'
+LOGOUT_URL = 'logout'
+LOGIN_REDIRECT_URL = 'home'
+
+# ^^^ I'm setting the default values for the LOGIN_URL, LOGOUT_URL and the LOGIN_REDIRECT_URL. 
+# The LOGIN_REDIRECT_URL will be used to redirect the user after authenticating 
+# from Django Login AND Social Auth.
