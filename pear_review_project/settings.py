@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.0/ref/settings/
 """
 
 import os
+import django_heroku
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -25,8 +26,10 @@ SECRET_KEY = 'mht*tfw&_xm7eio4dy1h2jtvx_$2wkjya&d&l@#pgbt1d8&5=q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
 
+ALLOWED_HOSTS = []
+# ALLOWED_HOSTS = [‘0.0.0.0’, ‘localhost’, ‘pear-review.herokuapp.com’]
+# based on blog post ^^
 LOGIN_REDIRECT_URL = 'issue_list'
 
 SOCIAL_AUTH_GITHUB_KEY = '0b12bc43c7e129678ce7'
@@ -79,6 +82,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'pear_review_project.wsgi.application'
+
 
 
 # Database
@@ -138,5 +142,14 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
-STATIC_URL = '/static/'
 
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_URL = '/static/'
+# STATIC_ROOT = ''
+## based on blog post ^^ STATIC_ROOT MUST CONTAIN ABSOLUTE PATH 
+
+STATICFILES_DIRS = (
+    
+)
+
+django_heroku.settings(locals())
