@@ -25,7 +25,7 @@ SECRET_KEY = 'mht*tfw&_xm7eio4dy1h2jtvx_$2wkjya&d&l@#pgbt1d8&5=q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [‘0.0.0.0’, ‘localhost’, ‘pear-review.herokuapp.com’]
 
 LOGIN_REDIRECT_URL = 'issue_list'
 
@@ -79,6 +79,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'pear_review_project.wsgi.application'
+
 
 
 # Database
@@ -139,4 +140,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, ‘staticfiles’)
+
+
 
