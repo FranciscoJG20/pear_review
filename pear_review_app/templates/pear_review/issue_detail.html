@@ -1,9 +1,12 @@
 {% extends 'pear_review/base.html' %} {% block content %}
-<h2> {{ issue.title }}
+
+<h4> Status:{{ issue.issue_status }}
     <a href="{% url 'issue_edit' pk=issue.pk %}">(edit)</a>
     <a href="{% url 'issue_delete' pk=issue.pk %}">(delete)</a>
-</h2>
-<h3> {{ issue.body }}</h4>
+</h4>
+
+<h2>{{ issue.title }}</h2>
+<h3>{{ issue.body }}</h4>
     <h4> Comments
         <a href="{% url 'comment_create' %}">(+)</a>
     </h4>

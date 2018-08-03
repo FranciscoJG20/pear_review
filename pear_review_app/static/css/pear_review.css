@@ -29,10 +29,6 @@ h4 {
   margin: 30px 20px;
 }
 
-/* img {
-  padding: 10px;
-} */
-
-a.delete {
-  background-color: red;
+h4 a {
+  border-style: double black;
 }
