@@ -6,7 +6,7 @@ A tool that allows developers to share and review their code. Developers can cre
 
 ## Technologies used:
 
-Python, Django, PostgreSQL, Github, Heroku
+Python, Django, PostgreSQL, Github, Bootstrap, Heroku
 
 ## Installing and running app locally:
 
