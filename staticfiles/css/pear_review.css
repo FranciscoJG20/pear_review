@@ -1,0 +1,38 @@
+h1 {
+  color: blueviolet;
+  text-align: center;
+}
+
+.lead {
+  font-size: 50px;
+}
+
+nav a {
+  /* border: 1px solid black; */
+  margin: 0.5em;
+  padding: 0.5em;
+  background-color: greenyellow;
+}
+
+nav a:hover {
+  background-color: orange;
+  color: blue;
+}
+
+.user-info {
+  float: right;
+}
+
+h2,
+h3,
+h4 {
+  margin: 30px 20px;
+}
+
+/* img {
+  padding: 10px;
+} */
+
+a.delete {
+  background-color: red;
+}
